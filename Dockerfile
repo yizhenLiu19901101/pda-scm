@@ -1,6 +1,6 @@
 FROM java
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-COPY build/libs/pda-scm-1.0.1.jar scm.jar
-RUN bash -c 'touch ./scm.jar'
-CMD ["java","-jar","scm.jar"]
+COPY build/libs/eureka-1.0.0.jar eureka.jar
+RUN bash -c 'touch ./eureka.jar'
+CMD ["java","-jar","eureka.jar"]
