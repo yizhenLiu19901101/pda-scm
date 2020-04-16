@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'eureka-server'
-    version = '0.0.1'
+    baseName = 'eureka'
+    version = '1.0.0'
 }
 
 repositories {
