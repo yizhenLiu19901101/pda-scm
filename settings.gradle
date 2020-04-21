@@ -1,3 +1,4 @@
 rootProject.name = 'pda-scm'
 include 'eureka'
+include 'zuul'
 
