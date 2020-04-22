@@ -1,0 +1,5 @@
+eureka是C/S架构。
+它的配置文件分为instance、client和server三部分。
+instance有一个主机名称的配置项。
+server有两个配置项，一个是是否关闭保护模式，另一个是失效扫描间隔时间。
+client有三个配置项，分别是是否注册到注册中心、是否从注册中心获得其他服务的地址、以及服务器的URL配置项（里面有一个defaultZone的默认子配置项）
