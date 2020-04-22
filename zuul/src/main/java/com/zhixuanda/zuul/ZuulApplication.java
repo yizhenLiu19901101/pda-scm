@@ -1,8 +1,7 @@
 package com.zhixuanda.zuul;
 
-import com.fasterxml.jackson.core.filter.TokenFilter;
-import com.zhixuanda.zuul.fadeBack.PdaFadeBack;
-import com.zhixuanda.zuul.filter.PdaFilter;
+import com.zhixuanda.zuul.fallBack.PdaFallBack;
+import com.zhixuanda.zuul.filter.AccessTokenFilter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.boot.SpringApplication;
@@ -21,17 +20,4 @@ public class ZuulApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);
     }
-
-    //将过滤器交给Spring管理
-    @Bean
-    public PdaFilter pdaFilter(){
-        return new PdaFilter();
-    }
-
-    //将fadeBackProvider交给Spring管理
-    @Bean
-    public PdaFadeBack pdaFadeBack(){
-        return new PdaFadeBack();
-    }
-
 }

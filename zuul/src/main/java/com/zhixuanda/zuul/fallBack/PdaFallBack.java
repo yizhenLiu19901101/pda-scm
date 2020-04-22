@@ -1,4 +1,4 @@
-package com.zhixuanda.zuul.fadeBack;
+package com.zhixuanda.zuul.fallBack;
 
 import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 /**
  * 微服务调度(提供了回退机制)
  */
-public class PdaFadeBack implements ZuulFallbackProvider {
+public class PdaFallBack implements ZuulFallbackProvider {
     @Override
     public String getRoute() {
         //表明是为哪个微服务提供回退
