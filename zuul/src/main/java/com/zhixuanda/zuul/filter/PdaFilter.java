@@ -42,17 +42,6 @@ public class PdaFilter extends ZuulFilter {
     public Object run() {
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
-        String token = request.getParameter("token");
-        /**
-         * token不允许为空
-         */
-//        if (token == null){
-//            logger.info("token不可以为空");
-//            context.setSendZuulResponse(false);
-//            context.setResponseStatusCode(401);
-//            context.setResponseBody("token can not be empty");
-//            return null;
-//        }
         return null;
     }
 }

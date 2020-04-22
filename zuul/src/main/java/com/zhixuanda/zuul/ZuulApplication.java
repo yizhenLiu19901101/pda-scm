@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 @EnableEurekaClient
+// 开启网关
 @EnableZuulProxy
 public class ZuulApplication {
     public static void main(String[] args) {
