@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.nio.charset.Charset;
 
 /**
- * 微服务调度
+ * 微服务调度(提供了回退机制)
  */
 public class PdaFadeBack implements ZuulFallbackProvider {
     @Override
