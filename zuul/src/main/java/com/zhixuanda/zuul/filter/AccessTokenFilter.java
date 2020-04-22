@@ -3,13 +3,14 @@ package com.zhixuanda.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import com.zhixuanda.zuul.service.feign.UserService;
+import com.zhixuanda.zuul.util.JWT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,8 @@ public class AccessTokenFilter extends ZuulFilter {
     }
 
     private List<String> openUrls;
+    @Autowired
+    private UserService userService;
 
     /**
      * 过滤器类型
@@ -80,15 +83,19 @@ public class AccessTokenFilter extends ZuulFilter {
             return null;
         }
         final String token = request.getHeader("token");
-        final String uuid = "";
         logger.info("method {} ,url {}", request.getMethod(), request.getRequestURL().toString());
-        if (uuid == null) {
-            logger.info("uuid 为空");
+        if (token == null) {
+            logger.info("token 为空");
+            ctx.setSendZuulResponse(false);// 对该请求进行路由
+            ctx.setResponseStatusCode(400);
+            ctx.set("isSuccess", false);// 设值，让下一个Filter看到上一个Filter的状态
             return null;
         } else {
             //判断用户当前状态是否为正常状态
-            logger.info(uuid);
-            Map user = new HashMap<>();
+            logger.info(token);
+            String userId = JWT.unsign(token,String.class);
+            Map userResult = userService.findById(userId);
+            Map user = (Map) userResult.get("userVo");
             if(user == null ){
                 logger.info("用户不存在");
             }else{

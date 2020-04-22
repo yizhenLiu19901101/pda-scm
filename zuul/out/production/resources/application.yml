@@ -5,3 +5,10 @@ spring:
     name: zuul
   profiles:
     active: local
+file-service:
+  fileter-pattern: /(pda)/[0-9]+
+  fileter-app-pattern: /(pda)/[0-9]+\.\w+
+  replace-url: /fileupload/fileupload/file/downFile/
+auth:
+  openUrls:
+    - (.*)/login(.*)
