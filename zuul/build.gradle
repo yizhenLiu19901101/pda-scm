@@ -1,17 +1,25 @@
-plugins {
-    id 'java'
-}
-
 group 'com.zhixuanda.scm'
 version '1.0.1'
-
-repositories {
-    mavenCentral()
-}
 
 ext {
     springBootVersion = '1.5.9.RELEASE'
 }
+
+buildscript {
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url "https://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
 
 jar {
     springBoot {
@@ -22,6 +30,10 @@ jar {
     setBaseName("zuul")
     //设置版本号
     setVersion("1.0.1")
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
