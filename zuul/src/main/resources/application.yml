@@ -4,7 +4,7 @@ spring:
   application:
     name: zuul
   profiles:
-    active: local
+    active: dev
 file-service:
   fileter-pattern: /(pda)/[0-9]+
   fileter-app-pattern: /(pda)/[0-9]+\.\w+
