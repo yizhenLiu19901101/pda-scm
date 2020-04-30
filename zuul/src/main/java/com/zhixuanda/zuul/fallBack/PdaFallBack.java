@@ -17,7 +17,7 @@ public class PdaFallBack implements ZuulFallbackProvider {
     @Override
     public String getRoute() {
         //表明是为哪个微服务提供回退
-        return "pda";
+        return "pda-service";
     }
 
     @Override

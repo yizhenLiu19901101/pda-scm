@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 用户业务调用
  */
-@FeignClient(value = "pda")
+@FeignClient(value = "pda-service")
 public interface UserService {
     @GetMapping("/findById/{id}")
     public Map findById(@PathVariable("id") String id);
