@@ -16,8 +16,6 @@ zuul:
   host:
     # 设置超时时间
     connect-timeout-millis: 60000
-    # 设置超时时间
-    socket-timeout-millis: 60000
 hystrix:
   command:
     default:
