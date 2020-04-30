@@ -1,7 +1,7 @@
 zuul:
   routes:
     #标识你服务的名字，这里可以自己定义，一般方便和规范来讲还是跟自己服务的名字一样
-    pda: /pda-service/**
+    pda-service: /pda-service/**
 eureka:
   #客户端
   client:
