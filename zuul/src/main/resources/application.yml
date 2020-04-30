@@ -15,7 +15,7 @@ auth:
 zuul:
   host:
     # 设置超时时间
-    connect-timeout-millis: 60000
+    connect-timeout-millis: 6000
 hystrix:
   command:
     default:
@@ -24,3 +24,6 @@ hystrix:
           thread:
             # 设置超时时间
             timeoutInMilliseconds: 6000
+ribbon:
+  readTimeout: 6000
+  connectTimeout: 6000
