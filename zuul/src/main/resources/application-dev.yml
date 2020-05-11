@@ -7,4 +7,4 @@ eureka:
   client:
     #注册中心地址
     service-url:
-      defaultZone: http://203.195.136.168:3000
+      defaultZone: http://203.195.136.168:3000/eureka

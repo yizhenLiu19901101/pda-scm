@@ -6,3 +6,6 @@ spring:
     name: eureka-server
   profiles:
     active: dev
+eureka:
+  dashboard:
+    path: /eureka
