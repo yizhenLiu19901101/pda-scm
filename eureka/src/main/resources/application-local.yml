@@ -1,8 +1,7 @@
 eureka:
   instance:
     hostname: localhost
-    prefer-ip-address: true
-    ip-address: 127.0.0.1
+    prefer-ip-address: false
   server:
     enableSelfPreservation: false      # 关闭自我保护模式（缺省为打开）
     eviction-interval-timer-in-ms: 10000  # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）

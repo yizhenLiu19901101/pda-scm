@@ -12,3 +12,18 @@ file-service:
 auth:
   openUrls:
     - (.*)/login(.*)
+zuul:
+  host:
+    # 设置超时时间
+    connect-timeout-millis: 6000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 设置超时时间
+            timeoutInMilliseconds: 6000
+ribbon:
+  readTimeout: 6000
+  connectTimeout: 6000
