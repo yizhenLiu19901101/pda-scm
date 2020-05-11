@@ -1,6 +1,6 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: www.zhixuanda.top
     prefer-ip-address: true
     ip-address: 203.195.136.168
   server:
