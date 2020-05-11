@@ -11,3 +11,4 @@ eureka:
   instance:
     instance-id: zuul
     prefer-ip-address: true
+    ip-address: 203.195.136.168
