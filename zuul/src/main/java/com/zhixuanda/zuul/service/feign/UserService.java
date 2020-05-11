@@ -11,6 +11,6 @@ import java.util.Map;
  */
 @FeignClient(value = "pda-service")
 public interface UserService {
-    @GetMapping("/findById/{id}")
+    @GetMapping("/user/findById/{id}")
     public Map findById(@PathVariable("id") String id);
 }
