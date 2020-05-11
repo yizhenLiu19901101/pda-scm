@@ -1,8 +1,7 @@
 eureka:
   instance:
-    hostname: www.zhixuanda.top
-    prefer-ip-address: true
-    ip-address: 203.195.136.168
+    hostname: 203.195.136.168
+    prefer-ip-address: false
   server:
     enableSelfPreservation: false          # 关闭自我保护模式（缺省为打开）
     eviction-interval-timer-in-ms: 10000  # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
@@ -10,4 +9,4 @@ eureka:
     registerWithEureka: false  #声明不在Eureka服务注册自己
     fetchRegistry: false  #是否从注册中心获得其他服务的地址
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #${}方式为引用变量，这里指代Eureka服务注册地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port} #${}方式为引用变量，这里指代Eureka服务注册地址
