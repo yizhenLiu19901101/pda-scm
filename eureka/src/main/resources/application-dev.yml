@@ -10,4 +10,4 @@ eureka:
     registerWithEureka: false  #声明不在Eureka服务注册自己
     fetchRegistry: false  #是否从注册中心获得其他服务的地址
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #${}方式为引用变量，这里指代Eureka服务注册地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port} #${}方式为引用变量，这里指代Eureka服务注册地址
