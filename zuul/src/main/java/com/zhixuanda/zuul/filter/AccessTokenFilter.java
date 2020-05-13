@@ -101,6 +101,9 @@ public class AccessTokenFilter extends ZuulFilter {
             }else{
                 logger.info("用户状态正常");
             }
+            request.setAttribute("id",user.get("id"));
+            request.setAttribute("userId",user.get("userId"));
+            ctx.setRequest(request);
             ctx.setSendZuulResponse(true);// 对该请求进行路由
             ctx.setResponseStatusCode(200);
             ctx.set("isSuccess", true);// 设值，让下一个Filter看到上一个Filter的状态
